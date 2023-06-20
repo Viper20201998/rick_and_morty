@@ -1,0 +1,18 @@
+.logo {
+	width: 45px;
+}
+
+.navbtn {
+	border: 1px solid #f2bb13;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+
+.navbtn:hover {
+	background-color: #f2bb13;
+	color: #f2bb13;
+}
+
+.nav-a {
+	color: #f2bb13;
+}
