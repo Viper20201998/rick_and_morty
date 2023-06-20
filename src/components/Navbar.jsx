@@ -9,7 +9,7 @@ import Perfil from './Perfil';
 import Home from './Home';
 
 export default function Navbar() {
-	const { isAuthenticated } = useAuth0();
+	const { isAuthenticated, user, logout } = useAuth0();
 
 	return (
 		<BrowserRouter>
@@ -47,18 +47,50 @@ export default function Navbar() {
 									Link
 								</a>
 							</li>
-							<li className='nav-item navbtn'>
-								<Link
-									to='/perfil'
-									className='Link nav-link nav-a'
-								>
-									Perfil de Usuario
-								</Link>
-							</li>
 						</ul>
 						{isAuthenticated ? (
 							<>
-								<Logout />
+								<li className='nav-item nav-perfil me-5'>
+									<img
+										src={user.picture}
+										className='img-perfil dropdown-toggle'
+										data-bs-toggle='dropdown'
+										aria-expanded='false'
+										alt=''
+									/>
+									<ul className='dropdown-menu ul-sub-perfil'>
+										<li>
+											<p className='dropdown-item'>
+												{user.name}
+											</p>
+										</li>
+										<li>
+											<Link
+												to='/perfil'
+												className='dropdown-item'
+											>
+												Perfil
+											</Link>
+										</li>
+										<li>
+											<a
+												className='dropdown-item'
+												href=''
+												onClick={() => {
+													logout({
+														logoutParams: {
+															returnTo:
+																window.location
+																	.origin,
+														},
+													});
+												}}
+											>
+												Cerrar Sesion
+											</a>
+										</li>
+									</ul>
+								</li>
 							</>
 						) : (
 							<>

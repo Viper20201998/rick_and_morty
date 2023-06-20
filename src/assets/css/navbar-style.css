@@ -16,3 +16,16 @@
 .nav-a {
 	color: #f2bb13;
 }
+
+.nav-perfil{
+	list-style: none;
+}
+
+.img-perfil{
+	width: 35px;
+	border-radius: 50%;
+}
+
+.ul-sub-perfil{
+margin-left: 90%;	
+}
