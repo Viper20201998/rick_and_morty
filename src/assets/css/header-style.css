@@ -1,10 +1,9 @@
 .container-banner {
-	height: 35rem;
+	max-height: 0rem;
 }
 
 .banner {
 	width: 100%;
-	height: 100%;
 	object-fit: cover;
 	object-position: center -28px;
 }

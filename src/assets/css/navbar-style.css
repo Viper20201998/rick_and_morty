@@ -1,9 +1,10 @@
+
 .logo {
 	width: 45px;
 }
 
 .navbtn {
-	border: 1px solid #f2bb13;
+	border: 1px solid #BF522A;
 	border-radius: 10px;
 	transition: all 0.5s;
 }
@@ -14,18 +15,19 @@
 }
 
 .nav-a {
-	color: #f2bb13;
+	color: #BF522A;
+	font-weight: bold;
 }
 
-.nav-perfil{
+.nav-perfil {
 	list-style: none;
 }
 
-.img-perfil{
+.img-perfil {
 	width: 35px;
 	border-radius: 50%;
 }
 
-.ul-sub-perfil{
-margin-left: 90%;	
+.ul-sub-perfil {
+	margin-left: 90%;
 }

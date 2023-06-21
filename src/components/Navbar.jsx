@@ -3,7 +3,6 @@ import Logo from '../assets/img/logo.png';
 import '../assets/css/navbar-style.css';
 import Login from './Login';
 import { useAuth0 } from '@auth0/auth0-react';
-import Logout from './Logout';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Perfil from './Perfil';
 import Home from './Home';
@@ -13,7 +12,7 @@ export default function Navbar() {
 
 	return (
 		<BrowserRouter>
-			<nav className='navbar navbar-expand-lg bg-light navbar-border'>
+			<nav className='navbar navbar-expand-lg bg-transparent navbar-border'>
 				<div className='container-fluid'>
 					<img className='logo' src={Logo} />
 
@@ -58,23 +57,23 @@ export default function Navbar() {
 										aria-expanded='false'
 										alt=''
 									/>
-									<ul className='dropdown-menu ul-sub-perfil'>
+									<ul className='dropdown-menu bg-transparent border border-warning-subtle ul-sub-perfil'>
 										<li>
-											<p className='dropdown-item'>
+											<p className='dropdown-item text-warning'>
 												{user.name}
 											</p>
 										</li>
 										<li>
 											<Link
 												to='/perfil'
-												className='dropdown-item'
+												className='dropdown-item text-warning'
 											>
 												Perfil
 											</Link>
 										</li>
 										<li>
 											<a
-												className='dropdown-item'
+												className='dropdown-item text-danger'
 												href=''
 												onClick={() => {
 													logout({
