@@ -1,0 +1,8 @@
+.perfil{
+  margin-top: 150px;
+}
+
+.perfil-img{
+  border-radius: 50%;
+  object-fit: cover -35px;
+}
