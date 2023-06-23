@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios' 
 
-export default function Personaje() {
+export default function Search() {
 
     const [personajes, setPersonajes] = useState([]);
     const [name, setName] = useState("");
@@ -54,17 +54,19 @@ export default function Personaje() {
                 ) : (
                     <>
                     {
-                        personajes.map((personaje, indice) => {
-                            return (
-                                <h2>{personaje.name}</h2>
-                                // <div className="card" style="width: 18rem;">
-                                // <img src="..." className="card-img-top" alt=""/>
-                                // <div className="card-body">
-                                //     <h5 className="card-title">{personaje.name}</h5>
-                                //     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                // </div>
-                                // </div>
-                
+                            personajes.map((personaje, indice) => {
+                                return (
+                                        <div className="card container" key={indice}>
+                                        <img src={personaje.image} className="card-img-top img-fluid" alt=""/>
+                                        <div className="card-body container">
+                                            <h5 className="card-title">{personaje.name}</h5>
+                                            <ul className='card-text'>
+                                                <li>{personaje.status}</li>
+                                                <li>{personaje.species}</li>
+                                                <li>{personaje.gender}</li>
+                                            </ul>
+                                        </div>
+                                        </div>
                             )
                         })
                     }
