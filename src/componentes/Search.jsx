@@ -53,23 +53,25 @@ export default function Search() {
                     </div>
                 ) : (
                     <>
+                    <div className='row mt-3'>
                     {
                             personajes.map((personaje, indice) => {
                                 return (
-                                        <div className="card container" key={indice}>
+                                        <div className="card container col-md-4" key={indice}>
                                         <img src={personaje.image} className="card-img-top img-fluid" alt=""/>
                                         <div className="card-body container">
                                             <h5 className="card-title">{personaje.name}</h5>
                                             <ul className='card-text'>
-                                                <li>{personaje.status}</li>
-                                                <li>{personaje.species}</li>
-                                                <li>{personaje.gender}</li>
+                                                <li>Estado: {personaje.status}</li>
+                                                <li>Especie: {personaje.species}</li>
+                                                <li>Genero: {personaje.gender}</li>
                                             </ul>
                                         </div>
                                         </div>
                             )
                         })
                     }
+                    </div>
                     </>
                 )
             }
