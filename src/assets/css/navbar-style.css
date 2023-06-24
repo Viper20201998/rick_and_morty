@@ -1,10 +1,13 @@
+.navbar-position {
+	margin-top: -19%;
+}
 
 .logo {
 	width: 45px;
 }
 
 .navbtn {
-	border: 1px solid #BF522A;
+	border: 1px solid #bf522a;
 	border-radius: 10px;
 	transition: all 0.5s;
 }
@@ -15,7 +18,7 @@
 }
 
 .nav-a {
-	color: #BF522A;
+	color: #bf522a;
 	font-weight: bold;
 }
 
