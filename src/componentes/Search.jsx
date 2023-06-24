@@ -57,7 +57,7 @@ export default function Search() {
                     {
                             personajes.map((personaje, indice) => {
                                 return (
-                                        <div className="card container col-md-4" key={indice}>
+                                        <div className="card container col-md-4 my-2" key={indice}>
                                         <img src={personaje.image} className="card-img-top img-fluid" alt=""/>
                                         <div className="card-body container">
                                             <h5 className="card-title">{personaje.name}</h5>
