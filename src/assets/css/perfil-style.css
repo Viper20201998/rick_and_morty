@@ -1,8 +1,13 @@
-.perfil{
-  margin-top: 150px;
+.perfil {
+	margin-top: 250px;
 }
 
-.perfil-img{
-  border-radius: 50%;
-  object-fit: cover -35px;
+.card-perfil {
+	width: 18rem;
+}
+
+.perfil-img {
+	width: 100px;
+	border-radius: 50%;
+	object-fit: cover -35px;
 }

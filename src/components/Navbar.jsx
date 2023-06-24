@@ -6,12 +6,16 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Perfil from './Perfil';
 import Home from './Home';
+import Header from './Header';
 
 export default function Navbar() {
 	const { isAuthenticated, user, logout } = useAuth0();
 
 	return (
 		<BrowserRouter>
+
+			<Header/>
+
 			<nav className='navbar navbar-expand-lg bg-transparent navbar-border'>
 				<div className='container-fluid'>
 					<img className='logo' src={Logo} />
