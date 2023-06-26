@@ -1,0 +1,115 @@
+.container-banner {
+	max-height: 0rem;
+}
+
+.banner {
+	width: 100%;
+	/** Se posiciono el banner de manera correcta*/
+}
+
+/** Las proximas media son para que las letras no entren dentro del banner*/
+@media (max-width: 1400px) {
+	.banner{
+		margin-bottom: 20px;
+	}	
+}
+
+@media (max-width: 1115px) {
+	.banner{
+		margin-bottom: 10px;
+	}	
+}
+
+@media (max-width: 991px) {
+	.banner{
+		margin-bottom: 10px;
+	}	
+}
+
+/*En la proxima media se da un margin a las palabras "buscador de personaje" para que no se monte en el banner*/
+@media (max-width: 992px) {
+	.style_margin_top{
+		margin-top: 100px;
+	}	
+}
+
+@media (max-width: 880px) {
+	.style_margin_top{
+		margin-top: 0px;
+	}	
+}
+
+@media (max-width: 830px) {
+	.style_margin_top{
+		margin-top: -20px;
+	}	
+}
+
+@media (max-width: 767px) {
+	.style_margin_top{
+		margin-top: 60px;
+	}	
+}
+
+@media (max-width: 650px) {
+	.style_margin_top{
+		margin-top: 10px;
+	}	
+}
+
+@media (max-width: 600px) {
+	.style_margin_top{
+		margin-top: -10px;
+	}	
+}
+
+@media (max-width: 576px) {
+	.style_margin_top{
+		margin-top: -15px;
+	}	
+}
+
+@media (max-width: 575px) {
+	.style_margin_top{
+		margin-top: 30px;
+	}	
+}
+
+@media (max-width: 525px) {
+	.style_margin_top{
+		margin-top: 10px;
+	}	
+}
+/*en el proximo hacemos que el margin buttom, sea mas junto para que no haya tanto espacio con "ingresa el nombre o estado de tu pj favorito:" */
+@media (max-width: 490px) {
+	.style_margin_buttom{
+		margin-bottom: -10px;
+	}	
+}
+
+@media (max-width: 400px) {
+	.style_margin_top{
+		margin-top: -20px;
+	}	
+}
+
+@media (max-width: 327px) {
+	.style_margin_top{
+		margin-top: -30px;
+	}	
+}
+
+@media (max-width: 265px) {
+	.style_margin_top{
+		margin-top: -40px;
+	}	
+}
+
+@media (max-width: 230px) {
+	.style_margin_top{
+		margin-top: -30px;
+	}	
+}
+
+
+
