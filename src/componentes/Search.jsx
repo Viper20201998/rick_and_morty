@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 import '../assets/css/search-style.css';
@@ -16,14 +16,13 @@ export default function Search() {
 				`https://rickandmortyapi.com/api/character?name=${name}&status=${status}`
 			)
 			.then((response) => {
-				console.log(response.data.results);
+				console.log(response.data);
 				setPersonajes(response.data.results);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	};
-
 	const handleName = (i) => {
 		console.log(i.target.value);
 		setName(i.target.value);
@@ -31,7 +30,7 @@ export default function Search() {
 
 	const handleStatus = (i) => {
 		console.log(i.target.value);
-		setStatus(i.target.value);
+		setStatus(i.target.value); 
 	};
 
 	const handleSubmit = (i) => {
