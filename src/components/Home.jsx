@@ -3,6 +3,8 @@ import React from 'react';
 
 export default function Home() {
 	const { user } = useAuth0();
-
-	return <div></div>;
+	return(
+		<div>
+		</div>
+	)
 }

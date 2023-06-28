@@ -8,6 +8,7 @@ import Perfil from './Perfil';
 import Home from './Home';
 import Header from './Header';
 import Search from '../componentes/Search';
+import Developers from '../componentes/Developers';
 
 export default function Navbar() {
 	const { isAuthenticated, user, logout } = useAuth0();
@@ -52,6 +53,12 @@ export default function Navbar() {
 												className='nav-link nav-a'
 											>
 												Buscar Personajes
+											</Link>
+											<Link
+												to='/developers'
+												className='nav-link nav-a'
+											>
+												Desarrolladores
 											</Link>
 										</>
 									) : (
@@ -129,6 +136,7 @@ export default function Navbar() {
 				<Route path='/' element={<Home />} />
 				<Route path='/search' element={<Search />} />
 				<Route path='/perfil' element={<Perfil />} />
+				<Route path='/developers' element={<Developers />} />
 			</Routes>
 		</BrowserRouter>
 	);

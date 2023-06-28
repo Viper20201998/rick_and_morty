@@ -36,12 +36,10 @@ export default function Search() {
 	const handleSubmit = (i) => {
 		i.preventDefault();
 		getCharacterBy();
-	
-	useEffect(() => {
+	}
+	useEffect(() =>{
 		getCharacterBy();
-	}, [])
-
-	};
+	},[]);
 	return isAuthenticated ? (
 		<div className='container-fluid search'>
 			<h1 className='text-center'>Buscador de personajes</h1>
@@ -53,7 +51,7 @@ export default function Search() {
 			</h3>
 			<form className='text-start ps-5 pt-3' onSubmit={handleSubmit}>
 				<label className='mb-3'>
-					Ingresa el nombre y estado del personaje
+					Ingresa el nombre o estado del personaje
 				</label>
 				<input
 					type='text'
@@ -77,7 +75,7 @@ export default function Search() {
 					Buscar Personaje
 				</button>
 			</form>
-			{personajes == "There is nothing here" ? (
+			{personajes === '404' ? (
 				<div className='alert alert-info' role='alert'>
 					No se encontraron coincidencias.
 				</div>
