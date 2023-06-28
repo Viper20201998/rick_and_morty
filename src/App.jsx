@@ -1,9 +1,11 @@
-import Search from "./componentes/Search"
+import Developers from "./componentes/Developers";
+
+
 function App() {
 	return (
 		<>
 			<div className='container'></div>
-			<Search />
+			
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios' 
 
 export default function Search() {
@@ -9,13 +9,12 @@ export default function Search() {
 
     const getCharacterBy = () => {
         axios.get(`https://rickandmortyapi.com/api/character?name=${name}&status=${status}`).then((response) => {
-            console.log(response.data.results);
+            console.log(response.data);
             setPersonajes(response.data.results);
         }).catch((error) => {
             console.log(error);
         })
     }
-
     const handleName = (i) => {
         console.log(i.target.value);
         setName(i.target.value);
@@ -23,13 +22,18 @@ export default function Search() {
 
     const handleStatus = (i) => {
         console.log(i.target.value);
-        setStatus(i.target.value);
+        setStatus(i.target.value); 
     }
 
     const handleSubmit = (i) => {
-        getCharacterBy();
         i.preventDefault();
+        getCharacterBy();
     }
+    
+    useEffect(() => {
+        getCharacterBy();
+    }, [])
+
     return (
         <div className='container'>
             <h1 className='text-center'>Buscador de personajes</h1>
@@ -39,6 +43,7 @@ export default function Search() {
                     <label className='mb-3'>Ingresa el nombre y estado del personaje</label>
                     <input type="text" className='form-control p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end' onChange={handleName}/>
                     <select name="" id="" className='my-3 form-select form-select-sm' aria-label=".form-select-sm example" onChange={handleStatus}>
+                        <option value="">-</option>
                         <option value="alive">Vivo</option>
                         <option value="dead">Muerto</option>
                         <option value="unknown">Desconocido</option>
@@ -46,8 +51,8 @@ export default function Search() {
                     <br />
                     <button className='btn btn-secondary' type='submit'>Buscar Personaje</button>
             </form>
-            {
-                personajes.length === 0 ? (
+            { 
+                personajes == "There is nothing here"  ? (
                     <div className="alert alert-info" role="alert">
                         No se encontraron coincidencias.
                     </div>
