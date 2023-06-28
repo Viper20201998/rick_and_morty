@@ -1,38 +1,7 @@
-.navbar-position {
-	margin-top: -19%;
+
+@media (max-width: 205px) {
+	.Home_bienvenida_style{
+		margin-top: -52px;
+		padding-bottom: 330px;
+	}	
 }
-
-.logo {
-	width: 45px;
-}
-
-.navbtn {
-	border: 1px solid #bf522a;
-	border-radius: 10px;
-	transition: all 0.5s;
-}
-
-.navbtn:hover {
-	background-color: #f2bb13;
-	color: #f2bb13;
-}
-
-.nav-a {
-	color: #bf522a;
-	font-weight: bold;
-}
-
-.nav-perfil {
-	list-style: none;
-}
-
-.img-perfil {
-	width: 35px;
-	border-radius: 50%;
-}
-
-.ul-sub-perfil {
-	margin-left: 90%;
-}
-
-
