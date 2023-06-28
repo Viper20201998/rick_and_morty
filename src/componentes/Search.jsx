@@ -34,8 +34,13 @@ export default function Search() {
 	};
 
 	const handleSubmit = (i) => {
-		getCharacterBy();
 		i.preventDefault();
+		getCharacterBy();
+	
+	useEffect(() => {
+		getCharacterBy();
+	}, [])
+
 	};
 	return isAuthenticated ? (
 		<div className='container-fluid search'>
@@ -62,6 +67,7 @@ export default function Search() {
 					aria-label='.form-select-sm example'
 					onChange={handleStatus}
 				>
+					<option value=''>-</option>
 					<option value='alive'>Vivo</option>
 					<option value='dead'>Muerto</option>
 					<option value='unknown'>Desconocido</option>
@@ -71,7 +77,7 @@ export default function Search() {
 					Buscar Personaje
 				</button>
 			</form>
-			{personajes.length === 0 ? (
+			{personajes == "There is nothing here" ? (
 				<div className='alert alert-info' role='alert'>
 					No se encontraron coincidencias.
 				</div>
