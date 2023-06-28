@@ -16,121 +16,139 @@ export default function Navbar() {
 	return (
 		<BrowserRouter>
 			<Header />
-				<nav className='navbar navbar-expand-lg bg-transparent navbar-position'>
-					<div className='container-fluid'>
-						<img className='logo' src={Logo} />
+			<nav className='navbar navbar-expand-lg bg-transparent navbar-position'>
+				<div className='container-fluid'>
+					<img className='logo' src={Logo} />
 
-						<button
-							className='navbar-toggler'
-							type='button'
-							data-bs-toggle='collapse'
-							data-bs-target='#navbarSupportedContent'
-							aria-controls='navbarSupportedContent'
-							aria-expanded='false'
-							aria-label='Toggle navigation'
-						>
-							<span className='navbar-toggler-icon'></span>
-						</button>
-						<div
-							className='collapse navbar-collapse'
-							id='navbarSupportedContent'
-						>
-							<ul className='navbar-nav me-auto mb-2 mb-lg-0 '>
-								<li className='nav-item ms-3 navbtn' id="home-button">
-									<Link
-										to='/'
-										className='nav-link nav-a'
-										aria-current='page'
-									>
-										Home
-									</Link>
-								</li>
-								<li className='nav-item ms-3 navbtn'>
-									{isAuthenticated ? (
-										<>
+					<button
+						className='navbar-toggler'
+						type='button'
+						data-bs-toggle='collapse'
+						data-bs-target='#navbarSupportedContent'
+						aria-controls='navbarSupportedContent'
+						aria-expanded='false'
+						aria-label='Toggle navigation'
+					>
+						<span className='navbar-toggler-icon'></span>
+					</button>
+					<div
+						className='collapse navbar-collapse'
+						id='navbarSupportedContent'
+					>
+						<ul className='navbar-nav me-auto mb-2 mb-lg-0 '>
+							<li
+								className='nav-item ms-3 navbtn'
+								id='home-button'
+							>
+								<Link
+									to='/'
+									className='nav-link nav-a'
+									aria-current='page'
+								>
+									Home
+								</Link>
+							</li>
+							<li className='nav-item ms-3 navbtn'>
+								{isAuthenticated ? (
+									<>
+										<Link
+											to='/search'
+											className='nav-link nav-a'
+										>
+											Buscar Personajes
+										</Link>
+									</>
+								) : (
+									<>
+										<a
+											className='nav-link nav-a'
+											onLoad={(e) => e.stopPropagation()}
+											onClick={() =>
+												alert('Debes Registrarte')
+											}
+										>
+											Buscar Personajes
+										</a>
+									</>
+								)}
+							</li>
+							<li className='nav-item ms-3 navbtn'>
+								{isAuthenticated ? (
+									<>
+										<Link
+											to='/developers'
+											className='nav-link nav-a'
+										>
+											Desarrolladores
+										</Link>
+									</>
+								) : (
+									<>
+										<a
+											className='nav-link nav-a'
+											onLoad={(e) => e.stopPropagation()}
+											onClick={() =>
+												alert('Debes Registrarte')
+											}
+										>
+											Desarrolladores
+										</a>
+									</>
+								)}
+							</li>
+						</ul>
+						{isAuthenticated ? (
+							<>
+								<li className='nav-item nav-perfil me-5'>
+									<img
+										src={user.picture}
+										className='img-perfil dropdown-toggle'
+										data-bs-toggle='dropdown'
+										aria-expanded='false'
+										alt=''
+									/>
+									<ul className='dropdown-menu bg-transparent border border-warning-subtle ul-sub-perfil'>
+										<li>
+											<p className='dropdown-item text-warning'>
+												{user.name}
+											</p>
+										</li>
+										<li>
 											<Link
-												to='/search'
-												className='nav-link nav-a'
+												to='/perfil'
+												className='dropdown-item text-warning'
 											>
-												Buscar Personajes
+												Perfil
 											</Link>
-											<Link
-										        to='/developers'
-										        className='nav-link nav-a'
-									        >
-										        Desarrolladores
-									        </Link>
-										</>
-									) : (
-										<>
+										</li>
+										<li>
 											<a
-												className='nav-link nav-a'
-												onLoad={(e) =>
-													e.stopPropagation()
-												}
-												onClick={() =>
-													alert('Debes Registrarte')
-												}
+												className='dropdown-item text-danger'
+												href=''
+												onClick={() => {
+													logout({
+														logoutParams: {
+															returnTo:
+																window.location
+																	.origin,
+														},
+													});
+												}}
 											>
-												Buscar Personajes
+												Cerrar Sesion
 											</a>
-										</>
-									)}
+										</li>
+									</ul>
 								</li>
-							</ul>
-							{isAuthenticated ? (
-								<>
-									<li className='nav-item nav-perfil me-5'>
-										<img
-											src={user.picture}
-											className='img-perfil dropdown-toggle'
-											data-bs-toggle='dropdown'
-											aria-expanded='false'
-											alt=''
-										/>
-										<ul className='dropdown-menu bg-transparent border border-warning-subtle ul-sub-perfil'>
-											<li>
-												<p className='dropdown-item text-warning'>
-													{user.name}
-												</p>
-											</li>
-											<li>
-												<Link
-													to='/perfil'
-													className='dropdown-item text-warning'
-												>
-													Perfil
-												</Link>
-											</li>
-											<li>
-												<a
-													className='dropdown-item text-danger'
-													href=''
-													onClick={() => {
-														logout({
-															logoutParams: {
-																returnTo:
-																	window
-																		.location
-																		.origin,
-															},
-														});
-													}}
-												>
-													Cerrar Sesion
-												</a>
-											</li>
-										</ul>
-									</li>
-								</>
-							) : (
-								<>
-									<Login />
-								</>
-							)}
-						</div>
+							</>
+						) : (
+							<>
+								<Login />
+							</>
+						)}
 					</div>
-				</nav>
+				</div>
+			</nav>
 
 			<Routes>
 				<Route path='/' element={<Home />} />
