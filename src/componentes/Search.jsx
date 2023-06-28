@@ -16,11 +16,10 @@ export default function Search() {
 				`https://rickandmortyapi.com/api/character?name=${name}&status=${status}`
 			)
 			.then((response) => {
-				console.log(response.data);
 				setPersonajes(response.data.results);
 			})
 			.catch((error) => {
-				console.log(error);
+				setPersonajes([]);
 			});
 	};
 	const handleName = (i) => {
@@ -75,7 +74,7 @@ export default function Search() {
 					Buscar Personaje
 				</button>
 			</form>
-			{personajes === '404' ? (
+			{personajes.length === 0 ? (
 				<div className='alert alert-info' role='alert'>
 					No se encontraron coincidencias.
 				</div>
