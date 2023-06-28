@@ -36,7 +36,7 @@ export default function Navbar() {
 							id='navbarSupportedContent'
 						>
 							<ul className='navbar-nav me-auto mb-2 mb-lg-0 '>
-								<li className='nav-item ms-3 navbtn'>
+								<li className='nav-item ms-3 navbtn' id="home-button">
 									<Link
 										to='/'
 										className='nav-link nav-a'
@@ -55,11 +55,11 @@ export default function Navbar() {
 												Buscar Personajes
 											</Link>
 											<Link
-												to='/developers'
-												className='nav-link nav-a'
-											>
-												Desarrolladores
-											</Link>
+										        to='/developers'
+										        className='nav-link nav-a'
+									        >
+										        Desarrolladores
+									        </Link>
 										</>
 									) : (
 										<>
