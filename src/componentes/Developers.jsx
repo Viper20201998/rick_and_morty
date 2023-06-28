@@ -9,7 +9,7 @@ import lester from '../assets/lester.png';
 export default function Developers() {
     return (
     <>
-    <div id="card-contaniner" className='row container-fluid ps-5'>
+    <div id="card-contaniner" className='row container ps-5'>
     <div className="card col-md-3 m-3 shadow p-3 mb-5 bg-body-tertiary rounded m-4">
         <img src={lester} className="card-img-top shadow " alt="lester" id='lester'/>
         <div className="card-body">
